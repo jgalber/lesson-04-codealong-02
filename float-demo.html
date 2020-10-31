@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lesson Four: Float Activity</title>
+    <style>
+    /*Add CSS style here*/
+    .content-box {
+            height: 5em;
+            width: 5em;
+            padding: 4em;
+            border: 1em solid;
+            margin: 1em;
+    }
+    #border-box {
+            box-sizing: border-box;
+    }
+
+    /*Float style starts here*/
+    .content-box {
+       float: right;
+      /* choose right or left values, set 'none' as a default value */
+    }
+
+    /* Place the footer to the bottom,
+    clearfix::after is the same effect but
+    instead of target one outer element it is
+    targeting the content inside the block element
+    footer {
+      clear: right;
+    }*/
+
+    /* It is something that you need as copy and paste,
+    add 'clearfix' as a class, it is a pseudo-element
+    it affects to all the elements wrapped within this container*/
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    #border-box {
+      /* overflow: visible; visible value is the default, but it is not recommended */
+      /* overflow: auto;  the value 'auto' make the content visible,
+      in this example, add a vertical scroll bar, not really good for design */
+      /* overflow: hidden; hidden value is very good for images
+      but not for text */
+      overflow: scroll; /* scroll value shares the same behavior as auto,
+      designers hate scroll bars in container, block-level elements, and boxes */
+
+    }
+
+    </style>
+  </head>
+  <body>
+    <article>
+
+      <header>
+        <h1>Headline</h1>
+      </header>
+
+      <section class="clearfix">
+
+        <h1>A section</h1>
+        <article class="content-box">
+          <a href="#link">A Link</a>
+          <p>A paragraph</p>
+        </article>
+
+        <article class="content-box" id="border-box">
+          <a href="#link">A Link</a>
+          <p>A paragraph</p>
+        </article>
+
+        <article class="content-box">
+          <a href="#link">A Link</a>
+          <p>A paragraph</p>
+        </article>
+
+      </section>
+
+      <footer>
+        <p>This is a footer</p>
+      </footer>
+
+    </article>
+  </body>
+</html>
